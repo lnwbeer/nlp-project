@@ -39,7 +39,9 @@ Word Sense Disambiguation is the task of identifying which sense of a word is us
 
 2. Install the required dependencies:
    ```
-   pip install -r requirements.txt
+   # Note: For Python 3.13 compatibility, do not install wordnet from requirements.txt
+   # Instead, install packages individually:
+   pip install torch>=1.7.0 transformers>=4.5.0 nltk>=3.6.2 numpy>=1.19.5 pandas>=1.2.4 scikit-learn>=0.24.2 tqdm>=4.61.0 matplotlib>=3.4.2 streamlit>=1.0.0 datasets>=1.8.0
    ```
 
 3. Download NLTK resources:
@@ -51,6 +53,8 @@ Word Sense Disambiguation is the task of identifying which sense of a word is us
    ```
    python init_project.py
    ```
+
+**Note:** This project has been tested with Python 3.13, which has deprecated the 'Ur' file opening mode used by some older packages like wordnet.
 
 ## Usage
 
@@ -69,10 +73,12 @@ python glossbert/models/infer.py --sentence "I went to the bank to deposit money
 ### Web Application
 
 ```
-streamlit run webapp/app.py
+python -m streamlit run webapp/app.py
 ```
 
 Open your browser and navigate to http://localhost:8501
+
+**Note:** Use `python -m streamlit` instead of just `streamlit` to ensure proper module path resolution.
 
 ## Model Architecture
 
