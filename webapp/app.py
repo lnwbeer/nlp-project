@@ -92,7 +92,7 @@ def main():
     with st.form("wsd_form"):
         # Example sentences
         examples = {
-            "Bank example": "They sat on the river bank and watched the sunset.",
+            "Bank example": "The children played on the river bank until sunset.",
             "Bat example": "He hit the ball with a baseball bat.",
             "Spring example": "After a long winter, spring finally arrived.",
             "Custom": ""
